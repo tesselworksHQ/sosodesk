@@ -99,7 +99,8 @@ runs the desk itself. With neither, it publishes a clearly labelled demo page.
   evidence, paper book with turnover cap and kill-switch, receipts, replayed track record, scorecard (next-day and
   7-day hit rate vs. buy & hold), static page and daily GitHub Action. On-chain anchoring of each receipt
   (Ethereum Sepolia) with a keyless `verify` command. SoDEX execution ticket: every rebalance priced on the live
-  SoDEX spot book with a slippage gate and the exact order body.
+  SoDEX spot book with a slippage gate and the exact order body. Atom feed of every call (`feed.xml`), a
+  plain-language reason per input, and a "how to read this page" guide.
 
 ## Not investment advice
 
