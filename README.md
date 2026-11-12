@@ -11,9 +11,11 @@ sosodesk is a daily desk process that answers both. Once a day it reads SoSoValu
 risk call on BTC (risk-on / neutral / risk-off plus a position size), runs it through hard risk limits on a paper
 book, and publishes a page where **every number behind the call is listed with the SoSoValue endpoint it came
 from**. Every call gets a **receipt**: a SHA-256 of the call and its evidence, kept in git with the raw API
-request log, so the track record can't be quietly rewritten.
+request log, and **anchored on chain** the same day (the receipt goes into a transaction's calldata), so the
+track record can't be quietly rewritten or backdated. Anyone can check a call with `python -m desk verify`.
 
-No server and no database: a GitHub Action is the desk, git is the ledger, and GitHub Pages is the report.
+No server and no database: one Python command is the desk, git is the ledger, a public chain is the clock, and
+GitHub Pages is the report.
 
 ## What it reads (SoSoValue OpenAPI v1)
 
@@ -57,13 +59,35 @@ the `desk` workflow. Without the secret the workflow publishes a clearly labelle
 
 Check a receipt: `python -c "import json,sys; from desk.book import receipt_id; r=json.load(open(sys.argv[1])); print(receipt_id(r['signal'])==r['receipt'])" data/receipts/<date>.json`
 
-Python 3.10+, standard library only.
+Python 3.10+, standard library only (anchoring also needs Foundry's `cast`).
+
+## On-chain receipts: check a call yourself
+
+```bash
+python -m desk anchor --key-file my-anchor.key --cast cast   # after a run: anchor the latest call (Sepolia)
+python -m desk verify                                        # every day: recompute + check the chain
+python -m desk verify --date 2026-11-12                      # one day
+```
+
+`anchor` sends one zero-value transaction from the anchoring account to itself. Its calldata is the ASCII tag
+`sosodesk` followed by the 32-byte receipt. `data/anchors.json` maps each date to its transaction. `verify` needs
+no key: it recomputes the receipt from `data/receipts/<date>.json`, fetches the transaction from a public RPC,
+checks that the calldata carries that receipt, and prints the block time. An edited receipt, a swapped
+transaction or a backdated call all fail. Gas is ~21.6k per day.
+
+## How this repo runs
+
+The live desk runs on the operator's machine: `python -m desk run` with `SOSO_API_KEY`, then `anchor`, then
+`git push` of `data/` only. The API key and the anchoring key never leave that machine. The workflow then renders
+the page from the committed `data/`. Forks can instead set the `SOSO_API_KEY` repository secret, and the workflow
+runs the desk itself. With neither, it publishes a clearly labelled demo page.
 
 ## Changelog
 
 - **Wave 3 (Nov 2026):** first version. SoSoValue client with fixture mode, five-input signal with per-datapoint
   evidence, paper book with turnover cap and kill-switch, receipts, replayed track record, scorecard (next-day and
-  7-day hit rate vs. buy & hold), static page and daily GitHub Action.
+  7-day hit rate vs. buy & hold), static page and daily GitHub Action. On-chain anchoring of each receipt
+  (Ethereum Sepolia) with a keyless `verify` command.
 
 ## Not investment advice
 
