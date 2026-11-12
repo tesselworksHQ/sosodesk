@@ -73,11 +73,17 @@ def run(args) -> dict:
     book["updated_ms"] = now_ms
     bpath.write_text(json.dumps(book, indent=1), encoding="utf-8")
     card = bk.scorecard(book, snap.get("klines"))
-    (data / "latest.json").write_text(json.dumps({"signal": sig, "receipt": rid, "entry": entry, "scorecard": card},
-                                                 indent=1), encoding="utf-8")
-    render(site, data, sig, rid, book, card, snap)
+    try:  # price today's rebalance on the live SoDEX book; never let this break the daily call
+        from .sodex import fetch, ticket
+        exe = ticket(fetch(args.asset, fixtures=args.fixtures), entry.get("trade_notional", 0.0), sig["as_of"])
+    except Exception as e:  # noqa: BLE001
+        exe = {"status": "error", "error": f"{type(e).__name__}: {e}"[:300]}
+    (data / "latest.json").write_text(json.dumps({"signal": sig, "receipt": rid, "entry": entry, "scorecard": card,
+                                                  "execution": exe}, indent=1), encoding="utf-8")
+    render(site, data, sig, rid, book, card, snap, exe)
     return {"as_of": sig["as_of"], "stance": sig["stance"], "composite": sig["composite"],
-            "weight": entry["weight"], "receipt": rid[:16], "errors": len(snap.get("errors") or [])}
+            "weight": entry["weight"], "receipt": rid[:16], "errors": len(snap.get("errors") or []),
+            "sodex": exe.get("status")}
 
 
 def rerender(data: Path, site: Path) -> None:
@@ -86,7 +92,7 @@ def rerender(data: Path, site: Path) -> None:
     latest = json.loads((data / "latest.json").read_text(encoding="utf-8"))
     book = json.loads((data / "book.json").read_text(encoding="utf-8"))
     snap = json.loads((data / "snapshot.json").read_text(encoding="utf-8"))
-    render(site, data, latest["signal"], latest["receipt"], book, latest["scorecard"], snap)
+    render(site, data, latest["signal"], latest["receipt"], book, latest["scorecard"], snap, latest.get("execution"))
 
 
 def main(argv=None):
