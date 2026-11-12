@@ -78,6 +78,20 @@ def main():
                              "total_volume_24h": "90122576829.22", "as_of": ms(now)})
     put("/analyses/fgi_indicator", [{"timestamp": str(ms(now - timedelta(days=i))),
                                      "crypto_fear_&_greed_index": rnd.randint(20, 80)} for i in range(30)])
+
+    # SoDEX public market data (shape of mainnet-gw.sodex.dev/api/v1/spot responses), book around the last close
+    def sodex(name, data):
+        (out / f"sodex_{name}.json").write_text(json.dumps({"code": 0, "timestamp": ms(now), "data": data}),
+                                                encoding="utf-8")
+    sodex("markets_symbols__symbol-vBTC_vUSDC", [{
+        "id": 1, "name": "vBTC_vUSDC", "displayName": "BTC/USDC", "pricePrecision": 0, "tickSize": "1",
+        "stepSize": "0.00001", "minQuantity": "0.00001", "minNotional": "5", "makerFee": "0.00035",
+        "takerFee": "0.00065", "status": "TRADING"}])
+    mid = round(px)
+    sodex("markets_vBTC_vUSDC_orderbook__limit-100", {
+        "blockTime": ms(now), "blockHeight": 291_000_000, "updateID": 1,
+        "bids": [[str(mid - 1 - i), f"{rnd.uniform(0.01, 0.04):.5f}"] for i in range(100)],
+        "asks": [[str(mid + i), f"{rnd.uniform(0.01, 0.04):.5f}"] for i in range(100)]})
     print(f"wrote synthetic fixtures to {out}/ (now={a.now}, seed={a.seed})")
 
 
