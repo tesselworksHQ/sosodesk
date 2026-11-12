@@ -103,6 +103,32 @@ class EndToEnd(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+class Sodex(unittest.TestCase):
+    MKT = {"symbol": {"id": 1, "name": "vBTC_vUSDC", "stepSize": "0.00001", "minQuantity": "0.00001",
+                      "minNotional": "5", "takerFee": "0.00065"},
+           "book": {"blockHeight": 7, "bids": [["99999", "0.01"], ["99990", "1"]],
+                    "asks": [["100001", "0.01"], ["100010", "0.01"], ["101000", "5"]]}}
+
+    def test_buy_walks_asks_and_caps_price(self):
+        from desk.sodex import ticket
+        t = ticket(self.MKT, 2_000.0, "2026-11-12")  # 0.02 BTC: two ask levels
+        self.assertEqual(t["status"], "ok")
+        self.assertEqual((t["side"], t["quantity"], t["levels"]), ("BUY", "0.02000", 2))
+        self.assertEqual(t["order"]["orders"][0]["price"], "100010")  # IOC limit = worst level walked
+        self.assertLess(t["slippage_bps"], 1)
+
+    def test_slippage_limit_blocks(self):
+        from desk.sodex import ticket
+        t = ticket(self.MKT, 20_000.0, "2026-11-12")  # 0.2 BTC reaches the 101000 level: ~50 bp
+        self.assertEqual(t["status"], "blocked")
+        self.assertIn("slippage", t["note"])
+
+    def test_no_trade_and_sell(self):
+        from desk.sodex import ticket
+        self.assertEqual(ticket(self.MKT, 0.0, "d")["status"], "no-trade")
+        self.assertEqual(ticket(self.MKT, -500.0, "d")["side"], "SELL")
+
+
 class Anchor(unittest.TestCase):
     def setUp(self):
         from desk import anchor as an
