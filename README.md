@@ -28,6 +28,7 @@ GitHub Pages is the report.
 | Fear & Greed | `GET /analyses/fgi_indicator` | contrarian trim at extremes |
 | Macro calendar | `GET /macro/events` | event-risk gate (CPI, FOMC, payrolls, PCE, GDP) |
 | Market overview | `GET /market/overview` | context on the page |
+| **SoDEX** spot book (public, no key) | `GET mainnet-gw.sodex.dev/api/v1/spot/markets/vBTC_vUSDC/orderbook` + `/markets/symbols` | prices today's rebalance on the live on-chain book; builds the exact order |
 
 About 25 requests a day, far below the 20/min and 100k/month limits. The client spaces calls at 3.2 s and
 honours `retry_after` on HTTP 429.
@@ -61,6 +62,16 @@ Check a receipt: `python -c "import json,sys; from desk.book import receipt_id; 
 
 Python 3.10+, standard library only (anchoring also needs Foundry's `cast`).
 
+## Execution on SoDEX
+
+The paper book fills at the daily close, so replayed and live calls follow one rule. Each run then asks what the
+same rebalance would cost for real: `desk/sodex.py` reads the SoDEX vBTC_vUSDC order book (an on-chain order
+book on ValueChain; the page shows the block height it was read at), walks it for the order size, and reports VWAP,
+slippage vs mid and taker fee. It then builds the exact body for `POST /api/v1/spot/trade/orders`: a LIMIT IOC
+at the worst level walked, so a real fill can't be worse than the quote. Above 25 bp of slippage the desk marks the
+order as blocked. Nothing is signed or sent. Wiring the signer (EIP-712, domain `spot`) is the next step and is
+deliberately kept out of a public paper desk.
+
 ## On-chain receipts: check a call yourself
 
 ```bash
@@ -87,7 +98,8 @@ runs the desk itself. With neither, it publishes a clearly labelled demo page.
 - **Wave 3 (Nov 2026):** first version. SoSoValue client with fixture mode, five-input signal with per-datapoint
   evidence, paper book with turnover cap and kill-switch, receipts, replayed track record, scorecard (next-day and
   7-day hit rate vs. buy & hold), static page and daily GitHub Action. On-chain anchoring of each receipt
-  (Ethereum Sepolia) with a keyless `verify` command.
+  (Ethereum Sepolia) with a keyless `verify` command. SoDEX execution ticket: every rebalance priced on the live
+  SoDEX spot book with a slippage gate and the exact order body.
 
 ## Not investment advice
 
