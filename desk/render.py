@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from html import escape as h
 from pathlib import Path
 
+from .anchor import CHAINS, load_anchors
 from .book import LIMITS, START_EQUITY
 from .signal import RISK_OFF, RISK_ON, WEIGHTS
 
@@ -122,15 +123,27 @@ def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: di
                "<th class=num>Position</th><th class=num>Next day</th><th class=num>Next 7 days</th><th>Right?</th>"
                "<th>Receipt</th></tr>")
     rows = {r["date"]: r for r in card["rows"]}
+    anchors = load_anchors(data_dir)
     for e in reversed(entries[-30:]):
         r = rows.get(e["date"], {})
         right = {True: '<span class=ok>yes</span>', False: '<span class=bad>no</span>'}.get(r.get("right"), "–")
         bf = " <span class=sub>(replay)</span>" if e.get("backfill") else ""
+        a = anchors.get(e["date"])
+        on_chain = (f' <a href="{h(CHAINS[a["chain"]]["explorer"] + a["tx"])}" rel="noopener" '
+                    f'title="receipt hash in {h(a["chain"])} tx calldata">on-chain ↗</a>'
+                    if a and a.get("receipt") == e["receipt"] and a["chain"] in CHAINS else "")
         out.append(f'<tr><td>{h(e["date"])}{bf}</td><td class="{h(e["stance"])}">{h(e["stance"])}</td>'
                    f'<td class=num>{e["weight"] * 100:.0f}%</td><td class=num>{pct(r.get("r1d"))}</td>'
                    f'<td class=num>{pct(r.get("r7d"))}</td><td>{right}</td>'
-                   f'<td><a href="data/receipts/{h(e["date"])}.json"><code>{h(e["receipt"][:12])}</code></a></td></tr>')
-    out.append("</table></div>")
+                   f'<td><a href="data/receipts/{h(e["date"])}.json"><code>{h(e["receipt"][:12])}</code></a>'
+                   f'{on_chain}</td></tr>')
+    out.append("</table>")
+    if anchors:
+        out.append(f'<p class=sub>{len(anchors)} call(s) are anchored on Ethereum Sepolia: the transaction\'s '
+                   'calldata is <code>"sosodesk"</code> + the 32-byte receipt, so the block time proves the call '
+                   'existed before the outcome. Check any of them yourself: '
+                   '<code>python -m desk verify --date &lt;date&gt;</code>.</p>')
+    out.append("</div>")
 
     out.append(f"<h2>Rules and limits</h2><div class=card><ul>"
                f"<li>Weights: " + ", ".join(f"{h(NAMES[k])} {v:.2f}" for k, v in WEIGHTS.items()) + "</li>"
