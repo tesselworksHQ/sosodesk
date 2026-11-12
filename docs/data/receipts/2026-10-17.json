@@ -1,0 +1,142 @@
+{
+ "receipt": "380f7ff96f35fedc2c637987d715195b9410717e5797faa43b6d3abb0d0ef728",
+ "rules_version": "1.0",
+ "data_mode": "fixtures",
+ "signal": {
+  "as_of": "2026-10-17",
+  "as_of_ms": 1792281599000,
+  "asset": "BTC",
+  "composite": 0.353,
+  "stance": "risk-on",
+  "target_exposure": 0.0882,
+  "max_exposure": 0.5,
+  "components": {
+   "etf_flows": {
+    "score": 1.0,
+    "weight": 0.35,
+    "note": "5-day net +$1.78B vs a typical day of $355M; streak -1 days"
+   },
+   "trend": {
+    "score": -0.387,
+    "weight": 0.25,
+    "note": "close -1.0% vs 20-day average, -5.7% vs 50-day"
+   },
+   "breadth": {
+    "score": null,
+    "weight": 0.15,
+    "note": "index snapshots are point-in-time (not in backfill)"
+   },
+   "news": {
+    "score": null,
+    "weight": 0.15,
+    "note": "headlines older than 7 days are not in the API"
+   },
+   "sentiment": {
+    "score": -0.064,
+    "weight": 0.1,
+    "note": "index 58, no extreme: light weight"
+   }
+  },
+  "gates": [
+   "ETF flows and price trend disagree: size halved"
+  ],
+  "evidence": [
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-10-16",
+    "value": -399946880,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-10-16"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-10-15",
+    "value": 458665648,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-10-15"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-10-14",
+    "value": 360393634,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-10-14"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-10-13",
+    "value": 624545725,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-10-13"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-10-12",
+    "value": 735914262,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-10-12"
+   },
+   {
+    "component": "etf_flows",
+    "label": "5-day net inflow (USD)",
+    "value": 1779572389,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "20-day typical |daily flow| (USD)",
+    "value": 354872542,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Flow streak (days, +in/-out)",
+    "value": -1,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Context: ETH ETF net inflow 2026-11-11",
+    "value": -8483935,
+    "source": "GET /etfs/summary-history?symbol=ETH&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Context: SOL ETF net inflow 2026-11-11",
+    "value": -235475,
+    "source": "GET /etfs/summary-history?symbol=SOL&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "trend",
+    "label": "BTC close 2026-10-16",
+    "value": 71448.56,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d",
+    "ref": "2026-10-16"
+   },
+   {
+    "component": "trend",
+    "label": "20-day average close",
+    "value": 72198.41,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d"
+   },
+   {
+    "component": "trend",
+    "label": "50-day average close",
+    "value": 75735.69,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d"
+   },
+   {
+    "component": "sentiment",
+    "label": "Crypto Fear & Greed 2026-10-17",
+    "value": 58,
+    "source": "GET /analyses/fgi_indicator",
+    "ref": "2026-10-17"
+   }
+  ],
+  "weights_used": 0.7,
+  "backfill": true
+ },
+ "api_calls": []
+}

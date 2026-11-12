@@ -1,0 +1,377 @@
+{
+ "receipt": "c1a2a1a450b0ca2a7f93d72cd4f6d9509cae7d50a815bf747841830e2749a2a5",
+ "rules_version": "1.0",
+ "data_mode": "fixtures",
+ "signal": {
+  "as_of": "2026-11-12",
+  "as_of_ms": 1794452895987,
+  "asset": "BTC",
+  "composite": -0.298,
+  "stance": "risk-off",
+  "target_exposure": 0.0,
+  "max_exposure": 0.5,
+  "components": {
+   "etf_flows": {
+    "score": -0.813,
+    "weight": 0.35,
+    "note": "5-day net -$587M vs a typical day of $217M; streak -2 days"
+   },
+   "trend": {
+    "score": -0.188,
+    "weight": 0.25,
+    "note": "close -0.2% vs 20-day average, -3.5% vs 50-day"
+   },
+   "breadth": {
+    "score": 0.0,
+    "weight": 0.15,
+    "note": "4 of 8 SoSoValue sector indices up over 7 days"
+   },
+   "news": {
+    "score": 0.2,
+    "weight": 0.15,
+    "note": "3 positive and 2 negative of 8 headlines in 24 h"
+   },
+   "sentiment": {
+    "score": 0.04,
+    "weight": 0.1,
+    "note": "index 45, no extreme: light weight"
+   }
+  },
+  "gates": [],
+  "evidence": [
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-11",
+    "value": -700391656,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-10",
+    "value": -421586595,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-10"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-09",
+    "value": 173506875,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-09"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-06",
+    "value": 211933344,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-06"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-05",
+    "value": 149749113,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-05"
+   },
+   {
+    "component": "etf_flows",
+    "label": "5-day net inflow (USD)",
+    "value": -586788919,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "20-day typical |daily flow| (USD)",
+    "value": 216526961,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Flow streak (days, +in/-out)",
+    "value": -2,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Context: ETH ETF net inflow 2026-11-11",
+    "value": -8483935,
+    "source": "GET /etfs/summary-history?symbol=ETH&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Context: SOL ETF net inflow 2026-11-11",
+    "value": -235475,
+    "source": "GET /etfs/summary-history?symbol=SOL&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "trend",
+    "label": "BTC close 2026-11-11",
+    "value": 68176.32,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "trend",
+    "label": "20-day average close",
+    "value": 68279.88,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d"
+   },
+   {
+    "component": "trend",
+    "label": "50-day average close",
+    "value": 70617.91,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d"
+   },
+   {
+    "component": "breadth",
+    "label": "ssiai 7-day return",
+    "value": -0.0076,
+    "source": "GET /indices/ssiai/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssidefi 7-day return",
+    "value": 0.0571,
+    "source": "GET /indices/ssidefi/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssigamefi 7-day return",
+    "value": 0.0363,
+    "source": "GET /indices/ssigamefi/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssilayer1 7-day return",
+    "value": 0.0872,
+    "source": "GET /indices/ssilayer1/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssilayer2 7-day return",
+    "value": -0.0037,
+    "source": "GET /indices/ssilayer2/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssimag7 7-day return",
+    "value": 0.0323,
+    "source": "GET /indices/ssimag7/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssimeme 7-day return",
+    "value": -0.0258,
+    "source": "GET /indices/ssimeme/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssirwa 7-day return",
+    "value": -0.0781,
+    "source": "GET /indices/ssirwa/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "Indices up over 7 days",
+    "value": "4/8",
+    "source": "GET /indices"
+   },
+   {
+    "component": "news",
+    "label": "+ Spot bitcoin ETFs log fifth day of inflows",
+    "value": 1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900000",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "- Exchange hacked, $40M drained from hot wallet",
+    "value": -1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900001",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "+ Bitcoin rallies as dollar weakens",
+    "value": 1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900004",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "- Lending protocol paused after exploit",
+    "value": -1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900005",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "+ State pension fund adds bitcoin reserve allocation",
+    "value": 1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900006",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "Headlines read / positive / negative (24 h)",
+    "value": "8 / 3 / 2",
+    "source": "GET /news/hot + GET /news"
+   },
+   {
+    "component": "sentiment",
+    "label": "Crypto Fear & Greed 2026-11-12",
+    "value": 45,
+    "source": "GET /analyses/fgi_indicator",
+    "ref": "2026-11-12"
+   }
+  ],
+  "weights_used": 1.0
+ },
+ "api_calls": [
+  {
+   "path": "/currencies",
+   "params": {},
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/currencies/1673723677362319866/klines",
+   "params": {
+    "interval": "1d",
+    "limit": 120
+   },
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/etfs/summary-history",
+   "params": {
+    "symbol": "BTC",
+    "country_code": "US",
+    "limit": 40
+   },
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/etfs/summary-history",
+   "params": {
+    "symbol": "ETH",
+    "country_code": "US",
+    "limit": 40
+   },
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/etfs/summary-history",
+   "params": {
+    "symbol": "SOL",
+    "country_code": "US",
+    "limit": 40
+   },
+   "at": 1794452895988,
+   "ok": true
+  },
+  {
+   "path": "/indices",
+   "params": {},
+   "at": 1794452895988,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssimag7/market-snapshot",
+   "params": {},
+   "at": 1794452895988,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssilayer1/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssilayer2/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssidefi/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssimeme/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssiai/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssigamefi/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssirwa/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/news/hot",
+   "params": {
+    "page_size": 50
+   },
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/news",
+   "params": {
+    "currency_id": "1673723677362319866",
+    "category": 1,
+    "page_size": 50
+   },
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/macro/events",
+   "params": {},
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/market/overview",
+   "params": {},
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/analyses/fgi_indicator",
+   "params": {
+    "limit": 30
+   },
+   "at": 1794452895990,
+   "ok": true
+  }
+ ]
+}

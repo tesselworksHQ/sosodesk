@@ -1,0 +1,2038 @@
+{
+ "asset": "BTC",
+ "mode": "fixtures",
+ "currency_id": "1673723677362319866",
+ "klines": [
+  {
+   "timestamp": 1784073600000,
+   "open": 98000.0,
+   "high": 98980.0,
+   "low": 96551.45,
+   "close": 97526.72,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1784160000000,
+   "open": 97526.72,
+   "high": 99689.09,
+   "low": 96551.45,
+   "close": 98702.06,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1784246400000,
+   "open": 98702.06,
+   "high": 100191.11,
+   "low": 97715.04,
+   "close": 99199.12,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1784332800000,
+   "open": 99199.12,
+   "high": 100191.11,
+   "low": 97419.72,
+   "close": 98403.76,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1784419200000,
+   "open": 98403.76,
+   "high": 100749.33,
+   "low": 97419.72,
+   "close": 99751.81,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1784505600000,
+   "open": 99751.81,
+   "high": 100749.33,
+   "low": 98021.56,
+   "close": 99011.68,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1784592000000,
+   "open": 99011.68,
+   "high": 100001.8,
+   "low": 96706.67,
+   "close": 97683.51,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1784678400000,
+   "open": 97683.51,
+   "high": 99531.35,
+   "low": 96706.67,
+   "close": 98545.89,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1784764800000,
+   "open": 98545.89,
+   "high": 102245.3,
+   "low": 97560.43,
+   "close": 101232.97,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1784851200000,
+   "open": 101232.97,
+   "high": 103381.08,
+   "low": 100220.64,
+   "close": 102357.51,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1784937600000,
+   "open": 102357.51,
+   "high": 106288.09,
+   "low": 101333.93,
+   "close": 105235.73,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1785024000000,
+   "open": 105235.73,
+   "high": 106288.09,
+   "low": 103296.42,
+   "close": 104339.81,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1785110400000,
+   "open": 104339.81,
+   "high": 106175.67,
+   "low": 103296.42,
+   "close": 105124.43,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1785196800000,
+   "open": 105124.43,
+   "high": 106175.67,
+   "low": 104051.32,
+   "close": 105102.35,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1785283200000,
+   "open": 105102.35,
+   "high": 106153.37,
+   "low": 101639.76,
+   "close": 102666.42,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1785369600000,
+   "open": 102666.42,
+   "high": 105160.42,
+   "low": 101639.76,
+   "close": 104119.22,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1785456000000,
+   "open": 104119.22,
+   "high": 105160.42,
+   "low": 99970.86,
+   "close": 100980.66,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1785542400000,
+   "open": 100980.66,
+   "high": 101990.47,
+   "low": 98820.24,
+   "close": 99818.43,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1785628800000,
+   "open": 99818.43,
+   "high": 100816.61,
+   "low": 97634.8,
+   "close": 98621.01,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1785715200000,
+   "open": 98621.01,
+   "high": 99607.22,
+   "low": 97113.43,
+   "close": 98094.37,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1785801600000,
+   "open": 98094.37,
+   "high": 99075.31,
+   "low": 96541.6,
+   "close": 97516.77,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1785888000000,
+   "open": 97516.77,
+   "high": 98491.93,
+   "low": 93958.0,
+   "close": 94907.07,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1785974400000,
+   "open": 94907.07,
+   "high": 95856.14,
+   "low": 91487.55,
+   "close": 92411.67,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1786060800000,
+   "open": 92411.67,
+   "high": 93467.43,
+   "low": 91487.55,
+   "close": 92542.01,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1786147200000,
+   "open": 92542.01,
+   "high": 93467.43,
+   "low": 89787.65,
+   "close": 90694.59,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1786233600000,
+   "open": 90694.59,
+   "high": 91601.54,
+   "low": 88748.05,
+   "close": 89644.5,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1786320000000,
+   "open": 89644.5,
+   "high": 91462.96,
+   "low": 88748.05,
+   "close": 90557.39,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1786406400000,
+   "open": 90557.39,
+   "high": 91462.96,
+   "low": 86785.25,
+   "close": 87661.87,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1786492800000,
+   "open": 87661.87,
+   "high": 88538.49,
+   "low": 84774.52,
+   "close": 85630.82,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1786579200000,
+   "open": 85630.82,
+   "high": 86487.13,
+   "low": 83816.25,
+   "close": 84662.88,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1786665600000,
+   "open": 84662.88,
+   "high": 85509.5,
+   "low": 82664.07,
+   "close": 83499.06,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1786752000000,
+   "open": 83499.06,
+   "high": 89450.12,
+   "low": 82664.07,
+   "close": 88564.48,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1786838400000,
+   "open": 88564.48,
+   "high": 89450.12,
+   "low": 84923.75,
+   "close": 85781.57,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1786924800000,
+   "open": 85781.57,
+   "high": 88286.62,
+   "low": 84923.75,
+   "close": 87412.5,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1787011200000,
+   "open": 87412.5,
+   "high": 88286.62,
+   "low": 82315.83,
+   "close": 83147.3,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1787097600000,
+   "open": 83147.3,
+   "high": 86278.06,
+   "low": 82315.83,
+   "close": 85423.82,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1787184000000,
+   "open": 85423.82,
+   "high": 86278.06,
+   "low": 81232.3,
+   "close": 82052.83,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1787270400000,
+   "open": 82052.83,
+   "high": 82873.36,
+   "low": 79681.63,
+   "close": 80486.5,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1787356800000,
+   "open": 80486.5,
+   "high": 81291.36,
+   "low": 78951.79,
+   "close": 79749.29,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1787443200000,
+   "open": 79749.29,
+   "high": 80546.78,
+   "low": 76818.09,
+   "close": 77594.03,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1787529600000,
+   "open": 77594.03,
+   "high": 79126.79,
+   "low": 76818.09,
+   "close": 78343.36,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1787616000000,
+   "open": 78343.36,
+   "high": 79513.25,
+   "low": 77559.93,
+   "close": 78725.99,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1787702400000,
+   "open": 78725.99,
+   "high": 79513.25,
+   "low": 77795.74,
+   "close": 78581.56,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1787788800000,
+   "open": 78581.56,
+   "high": 79367.37,
+   "low": 77264.91,
+   "close": 78045.36,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1787875200000,
+   "open": 78045.36,
+   "high": 82107.43,
+   "low": 77264.91,
+   "close": 81294.49,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1787961600000,
+   "open": 81294.49,
+   "high": 82107.43,
+   "low": 80403.29,
+   "close": 81215.44,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1788048000000,
+   "open": 81215.44,
+   "high": 83356.99,
+   "low": 80403.29,
+   "close": 82531.67,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1788134400000,
+   "open": 82531.67,
+   "high": 83356.99,
+   "low": 80690.28,
+   "close": 81505.33,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1788220800000,
+   "open": 81505.33,
+   "high": 82831.36,
+   "low": 80690.28,
+   "close": 82011.24,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1788307200000,
+   "open": 82011.24,
+   "high": 83689.16,
+   "low": 81191.13,
+   "close": 82860.55,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1788393600000,
+   "open": 82860.55,
+   "high": 83866.88,
+   "low": 82031.94,
+   "close": 83036.51,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1788480000000,
+   "open": 83036.51,
+   "high": 83866.88,
+   "low": 81326.29,
+   "close": 82147.77,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1788566400000,
+   "open": 82147.77,
+   "high": 82969.25,
+   "low": 78585.37,
+   "close": 79379.16,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1788652800000,
+   "open": 79379.16,
+   "high": 82497.81,
+   "low": 78585.37,
+   "close": 81681.0,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1788739200000,
+   "open": 81681.0,
+   "high": 82497.81,
+   "low": 78795.97,
+   "close": 79591.88,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1788825600000,
+   "open": 79591.88,
+   "high": 81153.05,
+   "low": 78795.97,
+   "close": 80349.55,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1788912000000,
+   "open": 80349.55,
+   "high": 82164.87,
+   "low": 79546.06,
+   "close": 81351.35,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1788998400000,
+   "open": 81351.35,
+   "high": 82164.87,
+   "low": 79522.56,
+   "close": 80325.82,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1789084800000,
+   "open": 80325.82,
+   "high": 81129.07,
+   "low": 78883.89,
+   "close": 79680.69,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1789171200000,
+   "open": 79680.69,
+   "high": 80477.5,
+   "low": 77398.3,
+   "close": 78180.11,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1789257600000,
+   "open": 78180.11,
+   "high": 79887.89,
+   "low": 77398.3,
+   "close": 79096.92,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1789344000000,
+   "open": 79096.92,
+   "high": 80453.25,
+   "low": 78305.96,
+   "close": 79656.68,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1789430400000,
+   "open": 79656.68,
+   "high": 80453.25,
+   "low": 76619.55,
+   "close": 77393.48,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1789516800000,
+   "open": 77393.48,
+   "high": 78446.34,
+   "low": 76619.55,
+   "close": 77669.64,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1789603200000,
+   "open": 77669.64,
+   "high": 80306.85,
+   "low": 76892.94,
+   "close": 79511.73,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1789689600000,
+   "open": 79511.73,
+   "high": 80418.44,
+   "low": 78716.62,
+   "close": 79622.22,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1789776000000,
+   "open": 79622.22,
+   "high": 80418.44,
+   "low": 74966.49,
+   "close": 75723.73,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1789862400000,
+   "open": 75723.73,
+   "high": 76480.97,
+   "low": 73374.67,
+   "close": 74115.83,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1789948800000,
+   "open": 74115.83,
+   "high": 74856.98,
+   "low": 71944.07,
+   "close": 72670.78,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1790035200000,
+   "open": 72670.78,
+   "high": 73397.48,
+   "low": 69853.89,
+   "close": 70559.49,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1790121600000,
+   "open": 70559.49,
+   "high": 71265.08,
+   "low": 68700.26,
+   "close": 69394.2,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1790208000000,
+   "open": 69394.2,
+   "high": 71117.98,
+   "low": 68700.26,
+   "close": 70413.85,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1790294400000,
+   "open": 70413.85,
+   "high": 71117.98,
+   "low": 69400.02,
+   "close": 70101.03,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1790380800000,
+   "open": 70101.03,
+   "high": 70802.05,
+   "low": 69046.56,
+   "close": 69744.0,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1790467200000,
+   "open": 69744.0,
+   "high": 70441.44,
+   "low": 68419.13,
+   "close": 69110.23,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1790553600000,
+   "open": 69110.23,
+   "high": 70127.28,
+   "low": 68419.13,
+   "close": 69432.95,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1790640000000,
+   "open": 69432.95,
+   "high": 71780.1,
+   "low": 68738.62,
+   "close": 71069.4,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1790726400000,
+   "open": 71069.4,
+   "high": 73062.69,
+   "low": 70358.71,
+   "close": 72339.3,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1790812800000,
+   "open": 72339.3,
+   "high": 75225.12,
+   "low": 71615.9,
+   "close": 74480.32,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1790899200000,
+   "open": 74480.32,
+   "high": 75225.12,
+   "low": 73089.04,
+   "close": 73827.32,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1790985600000,
+   "open": 73827.32,
+   "high": 74565.59,
+   "low": 72459.96,
+   "close": 73191.88,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1791072000000,
+   "open": 73191.88,
+   "high": 73923.8,
+   "low": 71924.04,
+   "close": 72650.54,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1791158400000,
+   "open": 72650.54,
+   "high": 73377.05,
+   "low": 70545.43,
+   "close": 71258.01,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1791244800000,
+   "open": 71258.01,
+   "high": 71970.59,
+   "low": 69547.29,
+   "close": 70249.79,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1791331200000,
+   "open": 70249.79,
+   "high": 72755.86,
+   "low": 69547.29,
+   "close": 72035.51,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1791417600000,
+   "open": 72035.51,
+   "high": 72755.86,
+   "low": 71296.07,
+   "close": 72016.23,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1791504000000,
+   "open": 72016.23,
+   "high": 73432.0,
+   "low": 71296.07,
+   "close": 72704.95,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1791590400000,
+   "open": 72704.95,
+   "high": 73876.16,
+   "low": 71977.9,
+   "close": 73144.71,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1791676800000,
+   "open": 73144.71,
+   "high": 73876.16,
+   "low": 70048.11,
+   "close": 70755.67,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1791763200000,
+   "open": 70755.67,
+   "high": 71843.54,
+   "low": 70048.11,
+   "close": 71132.22,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1791849600000,
+   "open": 71132.22,
+   "high": 72982.73,
+   "low": 70420.9,
+   "close": 72260.13,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1791936000000,
+   "open": 72260.13,
+   "high": 76842.61,
+   "low": 71537.53,
+   "close": 76081.79,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1792022400000,
+   "open": 76081.79,
+   "high": 76842.61,
+   "low": 74030.97,
+   "close": 74778.76,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1792108800000,
+   "open": 74778.76,
+   "high": 75526.55,
+   "low": 70734.07,
+   "close": 71448.56,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1792195200000,
+   "open": 71448.56,
+   "high": 75359.27,
+   "low": 70734.07,
+   "close": 74613.14,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1792281600000,
+   "open": 74613.14,
+   "high": 75359.27,
+   "low": 73489.48,
+   "close": 74231.8,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1792368000000,
+   "open": 74231.8,
+   "high": 74974.12,
+   "low": 72894.04,
+   "close": 73630.35,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1792454400000,
+   "open": 73630.35,
+   "high": 75161.1,
+   "low": 72894.04,
+   "close": 74416.93,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1792540800000,
+   "open": 74416.93,
+   "high": 75161.1,
+   "low": 71880.89,
+   "close": 72606.96,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1792627200000,
+   "open": 72606.96,
+   "high": 73333.03,
+   "low": 71455.75,
+   "close": 72177.52,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1792713600000,
+   "open": 72177.52,
+   "high": 74708.61,
+   "low": 71455.75,
+   "close": 73968.92,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1792800000000,
+   "open": 73968.92,
+   "high": 74708.61,
+   "low": 68965.66,
+   "close": 69662.28,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1792886400000,
+   "open": 69662.28,
+   "high": 71472.64,
+   "low": 68965.66,
+   "close": 70764.99,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1792972800000,
+   "open": 70764.99,
+   "high": 71472.64,
+   "low": 67813.61,
+   "close": 68498.59,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1793059200000,
+   "open": 68498.59,
+   "high": 69183.58,
+   "low": 66477.9,
+   "close": 67149.4,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1793145600000,
+   "open": 67149.4,
+   "high": 67820.89,
+   "low": 66379.45,
+   "close": 67049.95,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1793232000000,
+   "open": 67049.95,
+   "high": 68194.69,
+   "low": 66379.45,
+   "close": 67519.5,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1793318400000,
+   "open": 67519.5,
+   "high": 68194.69,
+   "low": 65287.7,
+   "close": 65947.17,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1793404800000,
+   "open": 65947.17,
+   "high": 68196.3,
+   "low": 65287.7,
+   "close": 67521.09,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1793491200000,
+   "open": 67521.09,
+   "high": 68196.3,
+   "low": 66467.27,
+   "close": 67138.65,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1793577600000,
+   "open": 67138.65,
+   "high": 68470.06,
+   "low": 66467.27,
+   "close": 67792.13,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1793664000000,
+   "open": 67792.13,
+   "high": 68863.79,
+   "low": 67114.21,
+   "close": 68181.97,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1793750400000,
+   "open": 68181.97,
+   "high": 68863.79,
+   "low": 66661.18,
+   "close": 67334.52,
+   "volume": 60000000000
+  },
+  {
+   "timestamp": 1793836800000,
+   "open": 67334.52,
+   "high": 69525.54,
+   "low": 66661.18,
+   "close": 68837.16,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1793923200000,
+   "open": 68837.16,
+   "high": 69525.54,
+   "low": 66040.13,
+   "close": 66707.21,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1794009600000,
+   "open": 66707.21,
+   "high": 67705.54,
+   "low": 66040.13,
+   "close": 67035.19,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1794096000000,
+   "open": 67035.19,
+   "high": 69953.88,
+   "low": 66364.83,
+   "close": 69261.27,
+   "volume": 30000000000
+  },
+  {
+   "timestamp": 1794182400000,
+   "open": 69261.27,
+   "high": 69953.88,
+   "low": 67208.92,
+   "close": 67887.8,
+   "volume": 50000000000
+  },
+  {
+   "timestamp": 1794268800000,
+   "open": 67887.8,
+   "high": 69855.06,
+   "low": 67208.92,
+   "close": 69163.43,
+   "volume": 40000000000
+  },
+  {
+   "timestamp": 1794355200000,
+   "open": 69163.43,
+   "high": 69855.06,
+   "low": 67494.56,
+   "close": 68176.32,
+   "volume": 20000000000
+  },
+  {
+   "timestamp": 1794441600000,
+   "open": 68176.32,
+   "high": 70182.76,
+   "low": 67494.56,
+   "close": 69487.88,
+   "volume": 50000000000
+  }
+ ],
+ "etf": {
+  "BTC": [
+   {
+    "date": "2026-11-11",
+    "total_net_inflow": -700391656,
+    "total_value_traded": 10404699875,
+    "total_net_assets": 94319060025,
+    "cum_net_inflow": 39299608344
+   },
+   {
+    "date": "2026-11-10",
+    "total_net_inflow": -421586595,
+    "total_value_traded": 7059039143,
+    "total_net_assets": 93307252196,
+    "cum_net_inflow": 38878021748
+   },
+   {
+    "date": "2026-11-09",
+    "total_net_inflow": 173506875,
+    "total_value_traded": 4082082500,
+    "total_net_assets": 93723668696,
+    "cum_net_inflow": 39051528623
+   },
+   {
+    "date": "2026-11-06",
+    "total_net_inflow": 211933344,
+    "total_value_traded": 4543200133,
+    "total_net_assets": 94232308723,
+    "cum_net_inflow": 39263461968
+   },
+   {
+    "date": "2026-11-05",
+    "total_net_inflow": 149749113,
+    "total_value_traded": 3796989355,
+    "total_net_assets": 94591706594,
+    "cum_net_inflow": 39413211081
+   },
+   {
+    "date": "2026-11-04",
+    "total_net_inflow": 130844669,
+    "total_value_traded": 3570136030,
+    "total_net_assets": 94905733800,
+    "cum_net_inflow": 39544055750
+   },
+   {
+    "date": "2026-11-03",
+    "total_net_inflow": 56932187,
+    "total_value_traded": 2683186238,
+    "total_net_assets": 95042371047,
+    "cum_net_inflow": 39600987936
+   },
+   {
+    "date": "2026-11-02",
+    "total_net_inflow": -222534861,
+    "total_value_traded": 4670418327,
+    "total_net_assets": 94508287382,
+    "cum_net_inflow": 39378453076
+   },
+   {
+    "date": "2026-10-30",
+    "total_net_inflow": -121331439,
+    "total_value_traded": 3455977273,
+    "total_net_assets": 94217091927,
+    "cum_net_inflow": 39257121636
+   },
+   {
+    "date": "2026-10-29",
+    "total_net_inflow": -170057548,
+    "total_value_traded": 4040690581,
+    "total_net_assets": 93808953811,
+    "cum_net_inflow": 39087064088
+   },
+   {
+    "date": "2026-10-28",
+    "total_net_inflow": -282477278,
+    "total_value_traded": 5389727336,
+    "total_net_assets": 93131008344,
+    "cum_net_inflow": 38804586810
+   },
+   {
+    "date": "2026-10-27",
+    "total_net_inflow": -220356777,
+    "total_value_traded": 4644281328,
+    "total_net_assets": 92602152078,
+    "cum_net_inflow": 38584230033
+   },
+   {
+    "date": "2026-10-26",
+    "total_net_inflow": -132779653,
+    "total_value_traded": 3593355841,
+    "total_net_assets": 92283480910,
+    "cum_net_inflow": 38451450379
+   },
+   {
+    "date": "2026-10-23",
+    "total_net_inflow": 221360961,
+    "total_value_traded": 4656331536,
+    "total_net_assets": 92814747217,
+    "cum_net_inflow": 38672811341
+   },
+   {
+    "date": "2026-10-22",
+    "total_net_inflow": -6876493,
+    "total_value_traded": 2082517918,
+    "total_net_assets": 92798243634,
+    "cum_net_inflow": 38665934847
+   },
+   {
+    "date": "2026-10-21",
+    "total_net_inflow": 454070,
+    "total_value_traded": 2005448836,
+    "total_net_assets": 92799333401,
+    "cum_net_inflow": 38666388917
+   },
+   {
+    "date": "2026-10-20",
+    "total_net_inflow": 41359064,
+    "total_value_traded": 2496308768,
+    "total_net_assets": 92898595155,
+    "cum_net_inflow": 38707747981
+   },
+   {
+    "date": "2026-10-19",
+    "total_net_inflow": 207394116,
+    "total_value_traded": 4488729392,
+    "total_net_assets": 93396341033,
+    "cum_net_inflow": 38915142097
+   },
+   {
+    "date": "2026-10-16",
+    "total_net_inflow": -399946880,
+    "total_value_traded": 6799362563,
+    "total_net_assets": 92436468520,
+    "cum_net_inflow": 38515195217
+   },
+   {
+    "date": "2026-10-15",
+    "total_net_inflow": 458665648,
+    "total_value_traded": 7503987781,
+    "total_net_assets": 93537266076,
+    "cum_net_inflow": 38973860865
+   },
+   {
+    "date": "2026-10-14",
+    "total_net_inflow": 360393634,
+    "total_value_traded": 6324723607,
+    "total_net_assets": 94402210798,
+    "cum_net_inflow": 39334254499
+   },
+   {
+    "date": "2026-10-13",
+    "total_net_inflow": 624545725,
+    "total_value_traded": 9494548697,
+    "total_net_assets": 95901120537,
+    "cum_net_inflow": 39958800224
+   },
+   {
+    "date": "2026-10-12",
+    "total_net_inflow": 735914262,
+    "total_value_traded": 10830971146,
+    "total_net_assets": 97667314766,
+    "cum_net_inflow": 40694714486
+   },
+   {
+    "date": "2026-10-09",
+    "total_net_inflow": 267507634,
+    "total_value_traded": 5210091604,
+    "total_net_assets": 98309333087,
+    "cum_net_inflow": 40962222120
+   },
+   {
+    "date": "2026-10-08",
+    "total_net_inflow": 634171377,
+    "total_value_traded": 9610056523,
+    "total_net_assets": 99831344392,
+    "cum_net_inflow": 41596393497
+   },
+   {
+    "date": "2026-10-07",
+    "total_net_inflow": 264318120,
+    "total_value_traded": 5171817445,
+    "total_net_assets": 100465707881,
+    "cum_net_inflow": 41860711617
+   },
+   {
+    "date": "2026-10-06",
+    "total_net_inflow": 96312712,
+    "total_value_traded": 3155752547,
+    "total_net_assets": 100696858390,
+    "cum_net_inflow": 41957024329
+   },
+   {
+    "date": "2026-10-05",
+    "total_net_inflow": -449556983,
+    "total_value_traded": 7394683801,
+    "total_net_assets": 99617921630,
+    "cum_net_inflow": 41507467346
+   },
+   {
+    "date": "2026-10-02",
+    "total_net_inflow": 56279884,
+    "total_value_traded": 2675358605,
+    "total_net_assets": 99752993351,
+    "cum_net_inflow": 41563747230
+   },
+   {
+    "date": "2026-10-01",
+    "total_net_inflow": -112847132,
+    "total_value_traded": 3354165580,
+    "total_net_assets": 99482160235,
+    "cum_net_inflow": 41450900098
+   },
+   {
+    "date": "2026-09-30",
+    "total_net_inflow": 394081453,
+    "total_value_traded": 6728977432,
+    "total_net_assets": 100427955721,
+    "cum_net_inflow": 41844981551
+   },
+   {
+    "date": "2026-09-29",
+    "total_net_inflow": 113674139,
+    "total_value_traded": 3364089663,
+    "total_net_assets": 100700773654,
+    "cum_net_inflow": 41958655689
+   }
+  ],
+  "ETH": [
+   {
+    "date": "2026-11-11",
+    "total_net_inflow": -8483935,
+    "total_value_traded": 2101807225,
+    "total_net_assets": 95979638555,
+    "cum_net_inflow": 39991516065
+   },
+   {
+    "date": "2026-11-10",
+    "total_net_inflow": 5190061,
+    "total_value_traded": 2062280727,
+    "total_net_assets": 95992094700,
+    "cum_net_inflow": 39996706125
+   },
+   {
+    "date": "2026-11-09",
+    "total_net_inflow": -154486567,
+    "total_value_traded": 3853838807,
+    "total_net_assets": 95621326939,
+    "cum_net_inflow": 39842219558
+   },
+   {
+    "date": "2026-11-06",
+    "total_net_inflow": -60814607,
+    "total_value_traded": 2729775289,
+    "total_net_assets": 95475371881,
+    "cum_net_inflow": 39781404951
+   },
+   {
+    "date": "2026-11-05",
+    "total_net_inflow": -109305561,
+    "total_value_traded": 3311666733,
+    "total_net_assets": 95213038535,
+    "cum_net_inflow": 39672099389
+   },
+   {
+    "date": "2026-11-04",
+    "total_net_inflow": -133061123,
+    "total_value_traded": 3596733480,
+    "total_net_assets": 94893691838,
+    "cum_net_inflow": 39539038266
+   },
+   {
+    "date": "2026-11-03",
+    "total_net_inflow": 243867,
+    "total_value_traded": 2002926405,
+    "total_net_assets": 94894277120,
+    "cum_net_inflow": 39539282133
+   },
+   {
+    "date": "2026-11-02",
+    "total_net_inflow": 46538491,
+    "total_value_traded": 2558461893,
+    "total_net_assets": 95005969498,
+    "cum_net_inflow": 39585820624
+   },
+   {
+    "date": "2026-10-30",
+    "total_net_inflow": -13346031,
+    "total_value_traded": 2160152367,
+    "total_net_assets": 94973939025,
+    "cum_net_inflow": 39572474594
+   },
+   {
+    "date": "2026-10-29",
+    "total_net_inflow": 71313742,
+    "total_value_traded": 2855764901,
+    "total_net_assets": 95145092005,
+    "cum_net_inflow": 39643788335
+   },
+   {
+    "date": "2026-10-28",
+    "total_net_inflow": 94010037,
+    "total_value_traded": 3128120440,
+    "total_net_assets": 95370716093,
+    "cum_net_inflow": 39737798372
+   },
+   {
+    "date": "2026-10-27",
+    "total_net_inflow": 112566928,
+    "total_value_traded": 3350803140,
+    "total_net_assets": 95640876721,
+    "cum_net_inflow": 39850365300
+   },
+   {
+    "date": "2026-10-26",
+    "total_net_inflow": -83267227,
+    "total_value_traded": 2999206730,
+    "total_net_assets": 95441035375,
+    "cum_net_inflow": 39767098073
+   },
+   {
+    "date": "2026-10-23",
+    "total_net_inflow": -91429799,
+    "total_value_traded": 3097157590,
+    "total_net_assets": 95221603857,
+    "cum_net_inflow": 39675668274
+   },
+   {
+    "date": "2026-10-22",
+    "total_net_inflow": -71242554,
+    "total_value_traded": 2854910643,
+    "total_net_assets": 95050621728,
+    "cum_net_inflow": 39604425720
+   },
+   {
+    "date": "2026-10-21",
+    "total_net_inflow": 42025247,
+    "total_value_traded": 2504302962,
+    "total_net_assets": 95151482321,
+    "cum_net_inflow": 39646450967
+   },
+   {
+    "date": "2026-10-20",
+    "total_net_inflow": 51727355,
+    "total_value_traded": 2620728254,
+    "total_net_assets": 95275627971,
+    "cum_net_inflow": 39698178321
+   },
+   {
+    "date": "2026-10-19",
+    "total_net_inflow": -13687589,
+    "total_value_traded": 2164251064,
+    "total_net_assets": 95242777759,
+    "cum_net_inflow": 39684490733
+   },
+   {
+    "date": "2026-10-16",
+    "total_net_inflow": -11564675,
+    "total_value_traded": 2138776106,
+    "total_net_assets": 95215022537,
+    "cum_net_inflow": 39672926057
+   },
+   {
+    "date": "2026-10-15",
+    "total_net_inflow": 128147659,
+    "total_value_traded": 3537771907,
+    "total_net_assets": 95522576919,
+    "cum_net_inflow": 39801073716
+   },
+   {
+    "date": "2026-10-14",
+    "total_net_inflow": 61839474,
+    "total_value_traded": 2742073688,
+    "total_net_assets": 95670991656,
+    "cum_net_inflow": 39862913190
+   },
+   {
+    "date": "2026-10-13",
+    "total_net_inflow": -74117959,
+    "total_value_traded": 2889415514,
+    "total_net_assets": 95493108554,
+    "cum_net_inflow": 39788795231
+   },
+   {
+    "date": "2026-10-12",
+    "total_net_inflow": -1617543,
+    "total_value_traded": 2019410520,
+    "total_net_assets": 95489226450,
+    "cum_net_inflow": 39787177687
+   },
+   {
+    "date": "2026-10-09",
+    "total_net_inflow": 43468254,
+    "total_value_traded": 2521619045,
+    "total_net_assets": 95593550259,
+    "cum_net_inflow": 39830645941
+   },
+   {
+    "date": "2026-10-08",
+    "total_net_inflow": -147504996,
+    "total_value_traded": 3770059956,
+    "total_net_assets": 95239538268,
+    "cum_net_inflow": 39683140945
+   },
+   {
+    "date": "2026-10-07",
+    "total_net_inflow": 64845824,
+    "total_value_traded": 2778149883,
+    "total_net_assets": 95395168244,
+    "cum_net_inflow": 39747986768
+   },
+   {
+    "date": "2026-10-06",
+    "total_net_inflow": 34220084,
+    "total_value_traded": 2410641013,
+    "total_net_assets": 95477296447,
+    "cum_net_inflow": 39782206853
+   },
+   {
+    "date": "2026-10-05",
+    "total_net_inflow": 51016835,
+    "total_value_traded": 2612202017,
+    "total_net_assets": 95599736850,
+    "cum_net_inflow": 39833223688
+   },
+   {
+    "date": "2026-10-02",
+    "total_net_inflow": 25508352,
+    "total_value_traded": 2306100228,
+    "total_net_assets": 95660956896,
+    "cum_net_inflow": 39858732040
+   },
+   {
+    "date": "2026-10-01",
+    "total_net_inflow": -2167386,
+    "total_value_traded": 2026008633,
+    "total_net_assets": 95655755169,
+    "cum_net_inflow": 39856564654
+   },
+   {
+    "date": "2026-09-30",
+    "total_net_inflow": 21629537,
+    "total_value_traded": 2259554443,
+    "total_net_assets": 95707666058,
+    "cum_net_inflow": 39878194191
+   },
+   {
+    "date": "2026-09-29",
+    "total_net_inflow": 38762487,
+    "total_value_traded": 2465149845,
+    "total_net_assets": 95800696027,
+    "cum_net_inflow": 39916956678
+   }
+  ],
+  "SOL": [
+   {
+    "date": "2026-11-11",
+    "total_net_inflow": -235475,
+    "total_value_traded": 2002825699,
+    "total_net_assets": 95999434860,
+    "cum_net_inflow": 39999764525
+   },
+   {
+    "date": "2026-11-10",
+    "total_net_inflow": -10317073,
+    "total_value_traded": 2123804879,
+    "total_net_assets": 95974673884,
+    "cum_net_inflow": 39989447452
+   },
+   {
+    "date": "2026-11-09",
+    "total_net_inflow": 25944934,
+    "total_value_traded": 2311339213,
+    "total_net_assets": 96036941727,
+    "cum_net_inflow": 40015392386
+   },
+   {
+    "date": "2026-11-06",
+    "total_net_inflow": -3240427,
+    "total_value_traded": 2038885125,
+    "total_net_assets": 96029164702,
+    "cum_net_inflow": 40012151959
+   },
+   {
+    "date": "2026-11-05",
+    "total_net_inflow": -2125226,
+    "total_value_traded": 2025502716,
+    "total_net_assets": 96024064159,
+    "cum_net_inflow": 40010026733
+   },
+   {
+    "date": "2026-11-04",
+    "total_net_inflow": -24995,
+    "total_value_traded": 2000299935,
+    "total_net_assets": 96024004172,
+    "cum_net_inflow": 40010001738
+   },
+   {
+    "date": "2026-11-03",
+    "total_net_inflow": 13739600,
+    "total_value_traded": 2164875194,
+    "total_net_assets": 96056979211,
+    "cum_net_inflow": 40023741338
+   },
+   {
+    "date": "2026-11-02",
+    "total_net_inflow": 6198847,
+    "total_value_traded": 2074386165,
+    "total_net_assets": 96071856443,
+    "cum_net_inflow": 40029940185
+   },
+   {
+    "date": "2026-10-30",
+    "total_net_inflow": -9141102,
+    "total_value_traded": 2109693223,
+    "total_net_assets": 96049917799,
+    "cum_net_inflow": 40020799083
+   },
+   {
+    "date": "2026-10-29",
+    "total_net_inflow": 2179262,
+    "total_value_traded": 2026151147,
+    "total_net_assets": 96055148028,
+    "cum_net_inflow": 40022978345
+   },
+   {
+    "date": "2026-10-28",
+    "total_net_inflow": 14169780,
+    "total_value_traded": 2170037361,
+    "total_net_assets": 96089155500,
+    "cum_net_inflow": 40037148125
+   },
+   {
+    "date": "2026-10-27",
+    "total_net_inflow": 18311658,
+    "total_value_traded": 2219739893,
+    "total_net_assets": 96133103479,
+    "cum_net_inflow": 40055459783
+   },
+   {
+    "date": "2026-10-26",
+    "total_net_inflow": -14112685,
+    "total_value_traded": 2169352225,
+    "total_net_assets": 96099233034,
+    "cum_net_inflow": 40041347098
+   },
+   {
+    "date": "2026-10-23",
+    "total_net_inflow": 20692659,
+    "total_value_traded": 2248311909,
+    "total_net_assets": 96148895416,
+    "cum_net_inflow": 40062039757
+   },
+   {
+    "date": "2026-10-22",
+    "total_net_inflow": -7854555,
+    "total_value_traded": 2094254662,
+    "total_net_assets": 96130044484,
+    "cum_net_inflow": 40054185202
+   },
+   {
+    "date": "2026-10-21",
+    "total_net_inflow": 5197367,
+    "total_value_traded": 2062368399,
+    "total_net_assets": 96142518163,
+    "cum_net_inflow": 40059382568
+   },
+   {
+    "date": "2026-10-20",
+    "total_net_inflow": 12413810,
+    "total_value_traded": 2148965716,
+    "total_net_assets": 96172311307,
+    "cum_net_inflow": 40071796378
+   },
+   {
+    "date": "2026-10-19",
+    "total_net_inflow": -6643548,
+    "total_value_traded": 2079722580,
+    "total_net_assets": 96156366791,
+    "cum_net_inflow": 40065152829
+   },
+   {
+    "date": "2026-10-16",
+    "total_net_inflow": 6992499,
+    "total_value_traded": 2083909992,
+    "total_net_assets": 96173148789,
+    "cum_net_inflow": 40072145329
+   },
+   {
+    "date": "2026-10-15",
+    "total_net_inflow": -4007303,
+    "total_value_traded": 2048087637,
+    "total_net_assets": 96163531262,
+    "cum_net_inflow": 40068138026
+   },
+   {
+    "date": "2026-10-14",
+    "total_net_inflow": 15650873,
+    "total_value_traded": 2187810476,
+    "total_net_assets": 96201093357,
+    "cum_net_inflow": 40083788899
+   },
+   {
+    "date": "2026-10-13",
+    "total_net_inflow": -4226415,
+    "total_value_traded": 2050716980,
+    "total_net_assets": 96190949961,
+    "cum_net_inflow": 40079562484
+   },
+   {
+    "date": "2026-10-12",
+    "total_net_inflow": 5009709,
+    "total_value_traded": 2060116505,
+    "total_net_assets": 96202973262,
+    "cum_net_inflow": 40084572192
+   },
+   {
+    "date": "2026-10-09",
+    "total_net_inflow": 336616,
+    "total_value_traded": 2004039394,
+    "total_net_assets": 96203781141,
+    "cum_net_inflow": 40084908809
+   },
+   {
+    "date": "2026-10-08",
+    "total_net_inflow": 6830591,
+    "total_value_traded": 2081967090,
+    "total_net_assets": 96220174559,
+    "cum_net_inflow": 40091739399
+   },
+   {
+    "date": "2026-10-07",
+    "total_net_inflow": 5989140,
+    "total_value_traded": 2071869684,
+    "total_net_assets": 96234548495,
+    "cum_net_inflow": 40097728540
+   },
+   {
+    "date": "2026-10-06",
+    "total_net_inflow": -21347902,
+    "total_value_traded": 2256174828,
+    "total_net_assets": 96183313530,
+    "cum_net_inflow": 40076380637
+   },
+   {
+    "date": "2026-10-05",
+    "total_net_inflow": -3925986,
+    "total_value_traded": 2047111837,
+    "total_net_assets": 96173891162,
+    "cum_net_inflow": 40072454651
+   },
+   {
+    "date": "2026-10-02",
+    "total_net_inflow": -5488777,
+    "total_value_traded": 2065865322,
+    "total_net_assets": 96160718098,
+    "cum_net_inflow": 40066965874
+   },
+   {
+    "date": "2026-10-01",
+    "total_net_inflow": 1893899,
+    "total_value_traded": 2022726783,
+    "total_net_assets": 96165263455,
+    "cum_net_inflow": 40068859773
+   },
+   {
+    "date": "2026-09-30",
+    "total_net_inflow": 7432851,
+    "total_value_traded": 2089194215,
+    "total_net_assets": 96183102298,
+    "cum_net_inflow": 40076292624
+   },
+   {
+    "date": "2026-09-29",
+    "total_net_inflow": -14232371,
+    "total_value_traded": 2170788451,
+    "total_net_assets": 96148944608,
+    "cum_net_inflow": 40062060253
+   }
+  ]
+ },
+ "indices": {
+  "ssimag7": {
+   "price": 8.29,
+   "change_pct_24h": 0.0067,
+   "roi_7d": 0.0323,
+   "roi_1m": -0.0194
+  },
+  "ssilayer1": {
+   "price": 28.37,
+   "change_pct_24h": 0.0051,
+   "roi_7d": 0.0872,
+   "roi_1m": 0.1216
+  },
+  "ssilayer2": {
+   "price": 19.74,
+   "change_pct_24h": -0.0008,
+   "roi_7d": -0.0037,
+   "roi_1m": 0.0545
+  },
+  "ssidefi": {
+   "price": 17.81,
+   "change_pct_24h": -0.0116,
+   "roi_7d": 0.0571,
+   "roi_1m": -0.0086
+  },
+  "ssimeme": {
+   "price": 23.11,
+   "change_pct_24h": -0.0189,
+   "roi_7d": -0.0258,
+   "roi_1m": 0.2642
+  },
+  "ssiai": {
+   "price": 8.95,
+   "change_pct_24h": 0.0126,
+   "roi_7d": -0.0076,
+   "roi_1m": 0.0499
+  },
+  "ssigamefi": {
+   "price": 14.52,
+   "change_pct_24h": -0.0059,
+   "roi_7d": 0.0363,
+   "roi_1m": -0.0153
+  },
+  "ssirwa": {
+   "price": 31.45,
+   "change_pct_24h": 0.0165,
+   "roi_7d": -0.0781,
+   "roi_1m": -0.0884
+  }
+ },
+ "hot_news": [
+  {
+   "id": 900000,
+   "title": "Spot bitcoin ETFs log fifth day of inflows",
+   "release_time": 1794434400000,
+   "source_link": "https://sosovalue.com/news/cluster/900000"
+  },
+  {
+   "id": 900001,
+   "title": "Exchange hacked, $40M drained from hot wallet",
+   "release_time": 1794425400000,
+   "source_link": "https://sosovalue.com/news/cluster/900001"
+  },
+  {
+   "id": 900002,
+   "title": "Major bank expands crypto custody",
+   "release_time": 1794416400000,
+   "source_link": "https://sosovalue.com/news/cluster/900002"
+  },
+  {
+   "id": 900003,
+   "title": "SEC delays decision on altcoin ETF",
+   "release_time": 1794407400000,
+   "source_link": "https://sosovalue.com/news/cluster/900003"
+  },
+  {
+   "id": 900004,
+   "title": "Bitcoin rallies as dollar weakens",
+   "release_time": 1794398400000,
+   "source_link": "https://sosovalue.com/news/cluster/900004"
+  },
+  {
+   "id": 900005,
+   "title": "Lending protocol paused after exploit",
+   "release_time": 1794389400000,
+   "source_link": "https://sosovalue.com/news/cluster/900005"
+  },
+  {
+   "id": 900006,
+   "title": "State pension fund adds bitcoin reserve allocation",
+   "release_time": 1794380400000,
+   "source_link": "https://sosovalue.com/news/cluster/900006"
+  },
+  {
+   "id": 900007,
+   "title": "Miners report record hashrate",
+   "release_time": 1794371400000,
+   "source_link": "https://sosovalue.com/news/cluster/900007"
+  }
+ ],
+ "asset_news": [],
+ "macro": [
+  {
+   "date": "2026-11-13",
+   "events": [
+    "CPI",
+    "Core CPI"
+   ]
+  },
+  {
+   "date": "2026-11-18",
+   "events": [
+    "Retail Sales"
+   ]
+  }
+ ],
+ "overview": {
+  "total_market_cap": "3280614829402.85",
+  "total_market_cap_change_pct": "0.6",
+  "total_volume_24h": "90122576829.22",
+  "as_of": 1794441600000
+ },
+ "fgi": [
+  {
+   "timestamp": "1794441600000",
+   "crypto_fear_&_greed_index": 45
+  },
+  {
+   "timestamp": "1794355200000",
+   "crypto_fear_&_greed_index": 29
+  },
+  {
+   "timestamp": "1794268800000",
+   "crypto_fear_&_greed_index": 54
+  },
+  {
+   "timestamp": "1794182400000",
+   "crypto_fear_&_greed_index": 78
+  },
+  {
+   "timestamp": "1794096000000",
+   "crypto_fear_&_greed_index": 52
+  },
+  {
+   "timestamp": "1794009600000",
+   "crypto_fear_&_greed_index": 56
+  },
+  {
+   "timestamp": "1793923200000",
+   "crypto_fear_&_greed_index": 51
+  },
+  {
+   "timestamp": "1793836800000",
+   "crypto_fear_&_greed_index": 64
+  },
+  {
+   "timestamp": "1793750400000",
+   "crypto_fear_&_greed_index": 40
+  },
+  {
+   "timestamp": "1793664000000",
+   "crypto_fear_&_greed_index": 25
+  },
+  {
+   "timestamp": "1793577600000",
+   "crypto_fear_&_greed_index": 37
+  },
+  {
+   "timestamp": "1793491200000",
+   "crypto_fear_&_greed_index": 23
+  },
+  {
+   "timestamp": "1793404800000",
+   "crypto_fear_&_greed_index": 71
+  },
+  {
+   "timestamp": "1793318400000",
+   "crypto_fear_&_greed_index": 64
+  },
+  {
+   "timestamp": "1793232000000",
+   "crypto_fear_&_greed_index": 31
+  },
+  {
+   "timestamp": "1793145600000",
+   "crypto_fear_&_greed_index": 47
+  },
+  {
+   "timestamp": "1793059200000",
+   "crypto_fear_&_greed_index": 77
+  },
+  {
+   "timestamp": "1792972800000",
+   "crypto_fear_&_greed_index": 24
+  },
+  {
+   "timestamp": "1792886400000",
+   "crypto_fear_&_greed_index": 37
+  },
+  {
+   "timestamp": "1792800000000",
+   "crypto_fear_&_greed_index": 80
+  },
+  {
+   "timestamp": "1792713600000",
+   "crypto_fear_&_greed_index": 21
+  },
+  {
+   "timestamp": "1792627200000",
+   "crypto_fear_&_greed_index": 60
+  },
+  {
+   "timestamp": "1792540800000",
+   "crypto_fear_&_greed_index": 25
+  },
+  {
+   "timestamp": "1792454400000",
+   "crypto_fear_&_greed_index": 71
+  },
+  {
+   "timestamp": "1792368000000",
+   "crypto_fear_&_greed_index": 36
+  },
+  {
+   "timestamp": "1792281600000",
+   "crypto_fear_&_greed_index": 25
+  },
+  {
+   "timestamp": "1792195200000",
+   "crypto_fear_&_greed_index": 58
+  },
+  {
+   "timestamp": "1792108800000",
+   "crypto_fear_&_greed_index": 74
+  },
+  {
+   "timestamp": "1792022400000",
+   "crypto_fear_&_greed_index": 34
+  },
+  {
+   "timestamp": "1791936000000",
+   "crypto_fear_&_greed_index": 24
+  }
+ ],
+ "calls": [
+  {
+   "path": "/currencies",
+   "params": {},
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/currencies/1673723677362319866/klines",
+   "params": {
+    "interval": "1d",
+    "limit": 120
+   },
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/etfs/summary-history",
+   "params": {
+    "symbol": "BTC",
+    "country_code": "US",
+    "limit": 40
+   },
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/etfs/summary-history",
+   "params": {
+    "symbol": "ETH",
+    "country_code": "US",
+    "limit": 40
+   },
+   "at": 1794452895987,
+   "ok": true
+  },
+  {
+   "path": "/etfs/summary-history",
+   "params": {
+    "symbol": "SOL",
+    "country_code": "US",
+    "limit": 40
+   },
+   "at": 1794452895988,
+   "ok": true
+  },
+  {
+   "path": "/indices",
+   "params": {},
+   "at": 1794452895988,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssimag7/market-snapshot",
+   "params": {},
+   "at": 1794452895988,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssilayer1/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssilayer2/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssidefi/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssimeme/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssiai/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssigamefi/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/indices/ssirwa/market-snapshot",
+   "params": {},
+   "at": 1794452895989,
+   "ok": true
+  },
+  {
+   "path": "/news/hot",
+   "params": {
+    "page_size": 50
+   },
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/news",
+   "params": {
+    "currency_id": "1673723677362319866",
+    "category": 1,
+    "page_size": 50
+   },
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/macro/events",
+   "params": {},
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/market/overview",
+   "params": {},
+   "at": 1794452895990,
+   "ok": true
+  },
+  {
+   "path": "/analyses/fgi_indicator",
+   "params": {
+    "limit": 30
+   },
+   "at": 1794452895990,
+   "ok": true
+  }
+ ]
+}

@@ -1,0 +1,446 @@
+{
+ "signal": {
+  "as_of": "2026-11-12",
+  "as_of_ms": 1794452895987,
+  "asset": "BTC",
+  "composite": -0.298,
+  "stance": "risk-off",
+  "target_exposure": 0.0,
+  "max_exposure": 0.5,
+  "components": {
+   "etf_flows": {
+    "score": -0.813,
+    "weight": 0.35,
+    "note": "5-day net -$587M vs a typical day of $217M; streak -2 days"
+   },
+   "trend": {
+    "score": -0.188,
+    "weight": 0.25,
+    "note": "close -0.2% vs 20-day average, -3.5% vs 50-day"
+   },
+   "breadth": {
+    "score": 0.0,
+    "weight": 0.15,
+    "note": "4 of 8 SoSoValue sector indices up over 7 days"
+   },
+   "news": {
+    "score": 0.2,
+    "weight": 0.15,
+    "note": "3 positive and 2 negative of 8 headlines in 24 h"
+   },
+   "sentiment": {
+    "score": 0.04,
+    "weight": 0.1,
+    "note": "index 45, no extreme: light weight"
+   }
+  },
+  "gates": [],
+  "evidence": [
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-11",
+    "value": -700391656,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-10",
+    "value": -421586595,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-10"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-09",
+    "value": 173506875,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-09"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-06",
+    "value": 211933344,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-06"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Net inflow 2026-11-05",
+    "value": 149749113,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US",
+    "ref": "2026-11-05"
+   },
+   {
+    "component": "etf_flows",
+    "label": "5-day net inflow (USD)",
+    "value": -586788919,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "20-day typical |daily flow| (USD)",
+    "value": 216526961,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Flow streak (days, +in/-out)",
+    "value": -2,
+    "source": "GET /etfs/summary-history?symbol=BTC&country_code=US"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Context: ETH ETF net inflow 2026-11-11",
+    "value": -8483935,
+    "source": "GET /etfs/summary-history?symbol=ETH&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "etf_flows",
+    "label": "Context: SOL ETF net inflow 2026-11-11",
+    "value": -235475,
+    "source": "GET /etfs/summary-history?symbol=SOL&country_code=US",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "trend",
+    "label": "BTC close 2026-11-11",
+    "value": 68176.32,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "trend",
+    "label": "20-day average close",
+    "value": 68279.88,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d"
+   },
+   {
+    "component": "trend",
+    "label": "50-day average close",
+    "value": 70617.91,
+    "source": "GET /currencies/1673723677362319866/klines?interval=1d"
+   },
+   {
+    "component": "breadth",
+    "label": "ssiai 7-day return",
+    "value": -0.0076,
+    "source": "GET /indices/ssiai/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssidefi 7-day return",
+    "value": 0.0571,
+    "source": "GET /indices/ssidefi/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssigamefi 7-day return",
+    "value": 0.0363,
+    "source": "GET /indices/ssigamefi/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssilayer1 7-day return",
+    "value": 0.0872,
+    "source": "GET /indices/ssilayer1/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssilayer2 7-day return",
+    "value": -0.0037,
+    "source": "GET /indices/ssilayer2/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssimag7 7-day return",
+    "value": 0.0323,
+    "source": "GET /indices/ssimag7/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssimeme 7-day return",
+    "value": -0.0258,
+    "source": "GET /indices/ssimeme/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "ssirwa 7-day return",
+    "value": -0.0781,
+    "source": "GET /indices/ssirwa/market-snapshot"
+   },
+   {
+    "component": "breadth",
+    "label": "Indices up over 7 days",
+    "value": "4/8",
+    "source": "GET /indices"
+   },
+   {
+    "component": "news",
+    "label": "+ Spot bitcoin ETFs log fifth day of inflows",
+    "value": 1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900000",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "- Exchange hacked, $40M drained from hot wallet",
+    "value": -1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900001",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "+ Bitcoin rallies as dollar weakens",
+    "value": 1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900004",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "- Lending protocol paused after exploit",
+    "value": -1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900005",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "+ State pension fund adds bitcoin reserve allocation",
+    "value": 1,
+    "source": "GET /news/hot",
+    "link": "https://sosovalue.com/news/cluster/900006",
+    "ref": "2026-11-11"
+   },
+   {
+    "component": "news",
+    "label": "Headlines read / positive / negative (24 h)",
+    "value": "8 / 3 / 2",
+    "source": "GET /news/hot + GET /news"
+   },
+   {
+    "component": "sentiment",
+    "label": "Crypto Fear & Greed 2026-11-12",
+    "value": 45,
+    "source": "GET /analyses/fgi_indicator",
+    "ref": "2026-11-12"
+   }
+  ],
+  "weights_used": 1.0
+ },
+ "receipt": "c1a2a1a450b0ca2a7f93d72cd4f6d9509cae7d50a815bf747841830e2749a2a5",
+ "entry": {
+  "date": "2026-11-12",
+  "receipt": "c1a2a1a450b0ca2a7f93d72cd4f6d9509cae7d50a815bf747841830e2749a2a5",
+  "stance": "risk-off",
+  "composite": -0.298,
+  "signal_target": 0.0,
+  "weight": 0.0,
+  "price": 69487.88,
+  "equity": 9930.91,
+  "buy_hold": 9292.46,
+  "drawdown": 0.0103,
+  "fee": 1.04,
+  "trade_notional": -1039.61,
+  "gates": [],
+  "notes": [],
+  "backfill": false,
+  "state": {
+   "cash": 9930.907046463111,
+   "units": 0.0,
+   "peak": 10035.031052693688,
+   "locked_until": null,
+   "first_price": 74778.76
+  }
+ },
+ "scorecard": {
+  "rows": [
+   {
+    "date": "2026-10-15",
+    "stance": "risk-on",
+    "r1d": -0.0445,
+    "r7d": -0.0348,
+    "right": false
+   },
+   {
+    "date": "2026-10-16",
+    "stance": "risk-on",
+    "r1d": 0.0443,
+    "r7d": 0.0353,
+    "right": true
+   },
+   {
+    "date": "2026-10-17",
+    "stance": "risk-on",
+    "r1d": -0.0051,
+    "r7d": -0.0664,
+    "right": false
+   },
+   {
+    "date": "2026-10-20",
+    "stance": "risk-on",
+    "r1d": -0.0243,
+    "r7d": -0.0977,
+    "right": false
+   },
+   {
+    "date": "2026-10-21",
+    "stance": "risk-on",
+    "r1d": -0.0059,
+    "r7d": -0.0765,
+    "right": false
+   },
+   {
+    "date": "2026-10-22",
+    "stance": "neutral",
+    "r1d": 0.0248,
+    "r7d": -0.0645,
+    "right": null
+   },
+   {
+    "date": "2026-10-23",
+    "stance": "neutral",
+    "r1d": -0.0582,
+    "r7d": -0.1084,
+    "right": null
+   },
+   {
+    "date": "2026-10-24",
+    "stance": "neutral",
+    "r1d": 0.0158,
+    "r7d": -0.0307,
+    "right": null
+   },
+   {
+    "date": "2026-10-27",
+    "stance": "risk-off",
+    "r1d": -0.0015,
+    "r7d": 0.0154,
+    "right": true
+   },
+   {
+    "date": "2026-10-28",
+    "stance": "risk-off",
+    "r1d": 0.007,
+    "r7d": 0.0042,
+    "right": false
+   },
+   {
+    "date": "2026-10-29",
+    "stance": "risk-off",
+    "r1d": -0.0233,
+    "r7d": 0.0195,
+    "right": true
+   },
+   {
+    "date": "2026-10-30",
+    "stance": "risk-off",
+    "r1d": 0.0239,
+    "r7d": 0.0115,
+    "right": false
+   },
+   {
+    "date": "2026-10-31",
+    "stance": "risk-off",
+    "r1d": -0.0057,
+    "r7d": -0.0072,
+    "right": true
+   },
+   {
+    "date": "2026-11-03",
+    "stance": "risk-off",
+    "r1d": -0.0124,
+    "r7d": 0.0144,
+    "right": true
+   },
+   {
+    "date": "2026-11-04",
+    "stance": "risk-off",
+    "r1d": 0.0223,
+    "r7d": 0.0125,
+    "right": false
+   },
+   {
+    "date": "2026-11-05",
+    "stance": "risk-off",
+    "r1d": -0.0309,
+    "r7d": 0.0095,
+    "right": true
+   },
+   {
+    "date": "2026-11-06",
+    "stance": "neutral",
+    "r1d": 0.0049,
+    "right": null
+   },
+   {
+    "date": "2026-11-07",
+    "stance": "neutral",
+    "r1d": 0.0332,
+    "right": null
+   },
+   {
+    "date": "2026-11-10",
+    "stance": "risk-on",
+    "r1d": -0.0143,
+    "right": false
+   },
+   {
+    "date": "2026-11-11",
+    "stance": "risk-on",
+    "r1d": 0.0192,
+    "right": true
+   },
+   {
+    "date": "2026-11-12",
+    "stance": "risk-off",
+    "right": null
+   }
+  ],
+  "scored": 15,
+  "hits": 7,
+  "hit_rate": 0.467,
+  "desk_return": -0.0069,
+  "buy_hold_return": -0.0708,
+  "max_drawdown": 0.0122
+ },
+ "execution": {
+  "symbol": "vBTC_vUSDC",
+  "symbolID": 1,
+  "block_height": 291000000,
+  "block_time_ms": 1794441600000,
+  "mid": 69487.5,
+  "spread_bps": 0.14391077531930202,
+  "requests": [
+   "GET https://mainnet-gw.sodex.dev/api/v1/spot/markets/symbols?symbol=vBTC_vUSDC",
+   "GET https://mainnet-gw.sodex.dev/api/v1/spot/markets/vBTC_vUSDC/orderbook?limit=100"
+  ],
+  "status": "ok",
+  "side": "SELL",
+  "quantity": "0.01496",
+  "filled_quantity": "0.01496",
+  "levels": 1,
+  "vwap": 69487.0,
+  "slippage_bps": 0.07,
+  "taker_fee_usd": 0.68,
+  "notional_usd": 1039.52552,
+  "order": {
+   "accountID": "<accountID>",
+   "orders": [
+    {
+     "symbolID": 1,
+     "clOrdID": "sosodesk-2026-11-12",
+     "side": 2,
+     "type": 1,
+     "timeInForce": 3,
+     "price": "69487",
+     "quantity": "0.01496"
+    }
+   ]
+  }
+ }
+}
