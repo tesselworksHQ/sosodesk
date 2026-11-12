@@ -1,0 +1,6 @@
+__pycache__/
+*.key
+.env
+fixtures/
+site/
+site-demo-data/
