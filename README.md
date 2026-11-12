@@ -1,6 +1,6 @@
 # sosodesk: a one-person crypto desk that shows its work
 
-**Live page:** https://tesselworksHQ.github.io/sosodesk/ · built on the [SoSoValue](https://sosovalue.com) OpenAPI
+**Live page:** https://raw.githack.com/tesselworksHQ/sosodesk/main/docs/index.html (the rendered `docs/` folder) · built on the [SoSoValue](https://sosovalue.com) OpenAPI
 
 A solo trader or a small fund has two problems that dashboards don't solve:
 
