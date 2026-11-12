@@ -95,6 +95,31 @@ def sodex_card(exe: dict | None) -> str:
         f"{h(json.dumps(exe['order'], indent=1))}</code></pre></details></div>")
 
 
+PAGE = "https://tesselworksHQ.github.io/sosodesk/"
+
+
+def feed(entries: list, anchors: dict, mode: str) -> str:
+    """Atom feed: one entry per call, newest first, so a user can follow the desk in any feed reader."""
+    def ts(d):
+        return f"{d}T14:30:00Z"
+    items = []
+    for e in reversed(entries[-30:]):
+        a = anchors.get(e["date"])
+        chain = (f' On chain: {CHAINS[a["chain"]]["explorer"]}{a["tx"]}' if a and a.get("receipt") == e["receipt"]
+                 and a["chain"] in CHAINS else "")
+        tag = " (replay)" if e.get("backfill") else (" (demo data)" if mode != "live" else "")
+        body = (f'{e["stance"]}{tag}: paper position {e["weight"] * 100:.0f}% of equity at {e["price"]:,.2f}; '
+                f'composite {e["composite"]:+.2f}; equity ${e["equity"]:,.0f}. Receipt {e["receipt"]}.{chain}')
+        items.append(f'<entry><title>{h(e["date"])}: BTC {h(e["stance"])} {e["weight"] * 100:.0f}%{h(tag)}</title>'
+                     f'<id>urn:sosodesk:{h(e["receipt"])}</id><updated>{ts(e["date"])}</updated>'
+                     f'<link href="{PAGE}data/receipts/{h(e["date"])}.json"/><summary>{h(body)}</summary></entry>')
+    upd = ts(entries[-1]["date"]) if entries else "1970-01-01T00:00:00Z"
+    return ('<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">'
+            f'<title>sosodesk: daily BTC risk calls</title><id>{PAGE}</id><updated>{upd}</updated>'
+            f'<link href="{PAGE}"/><link rel="self" href="{PAGE}feed.xml"/><author><name>Tessel Works</name></author>'
+            + "".join(items) + "</feed>")
+
+
 def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: dict, snap: dict,
            exe: dict | None = None) -> None:
     site = Path(site)
@@ -104,10 +129,13 @@ def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: di
     mode = book.get("data_mode", "live")
     upd = datetime.fromtimestamp(book.get("updated_ms", 0) / 1000, tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out = [f"<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'>"
-           f"<title>sosodesk · {h(sig['asset'])} {h(sig['stance'])}</title><style>{CSS}</style><main>",
+           f"<title>sosodesk · {h(sig['asset'])} {h(sig['stance'])}</title>"
+           '<link rel="alternate" type="application/atom+xml" title="sosodesk calls" href="feed.xml">'
+           f"<style>{CSS}</style><main>",
            "<h1>sosodesk</h1><div class=sub>A one-person crypto desk that shows its work. Every call is built from "
            "SoSoValue data, every input is listed below with the endpoint it came from, and every call is kept "
-           f"with a receipt hash so the track record can't be quietly edited. Updated {h(upd)}.</div>"]
+           f"with a receipt hash so the track record can't be quietly edited. Updated {h(upd)} · "
+           '<a href="feed.xml">follow the calls (Atom feed)</a>.</div>']
     if mode != "live":
         out.append('<div class="banner"><b>Demo data.</b> This build ran on recorded test fixtures, not the live '
                    'SoSoValue API. The live run replaces this page.</div>')
@@ -126,6 +154,16 @@ def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: di
                f'{"–" if hr is None else f"{hr * 100:.0f}%"}</div><div class="sub">{card["hits"]} of {card["scored"]} '
                f'directional calls · max drawdown {card["max_drawdown"] * 100:.1f}%</div></div></div>')
 
+    out.append('<details class=card><summary>How to read this page</summary><ol>'
+               "<li><b>The call</b> (top left) is today's stance; <b>paper position</b> is what the desk holds after "
+               "its risk limits, which can be smaller than what the signal wanted.</li>"
+               "<li><b>Why</b> shows the five inputs: each scores from −1 (risk-off) to +1 (risk-on), and the "
+               "weighted mean is the composite.</li>"
+               "<li><b>Evidence</b> lists every number behind those scores with the SoSoValue request it came "
+               "from, so you can check any of them.</li>"
+               "<li><b>Execution</b> shows what the same trade would cost on SoDEX's live order book right now.</li>"
+               "<li><b>Track record</b> keeps every call, the misses too. Each has a receipt (a hash of the call "
+               "and its evidence); “on-chain” links show the transaction that timestamped it.</li></ol></details>")
     if sig["gates"] or last["notes"]:
         out.append('<div class="card"><b>Risk gates that fired</b><ul>' +
                    "".join(f'<li class="gate">{h(g)}</li>' for g in sig["gates"] + last["notes"]) + "</ul></div>")
@@ -198,6 +236,7 @@ def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: di
                '<a href="https://github.com/tesselworksHQ/sosodesk">github.com/tesselworksHQ/sosodesk</a> · '
                'built by Tessel Works.</p></main>')
     (site / "index.html").write_text("\n".join(out), encoding="utf-8")
+    (site / "feed.xml").write_text(feed(entries, anchors, mode), encoding="utf-8")
     # ship the data next to the page so the receipt links resolve on GitHub Pages
     dst = site / "data"
     if dst.exists():
