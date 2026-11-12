@@ -99,6 +99,13 @@ class EndToEnd(unittest.TestCase):
             self.assertEqual(rec["receipt"], bk.receipt_id(rec["signal"]))  # receipt verifies
             self.assertEqual(latest["receipt"], rec["receipt"])
             self.assertTrue(rec["api_calls"])
+            import xml.etree.ElementTree as ET
+            atom = "{http://www.w3.org/2005/Atom}"
+            root = ET.parse(tmp / "site" / "feed.xml").getroot()
+            entries = root.findall(atom + "entry")
+            self.assertTrue(entries)
+            self.assertIn(rec["receipt"], entries[0].find(atom + "id").text)  # newest call first
+            self.assertEqual(latest["execution"]["status"], "ok" if latest["entry"]["trade_notional"] else "no-trade")
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 
