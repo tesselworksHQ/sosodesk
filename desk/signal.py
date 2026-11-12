@@ -38,6 +38,12 @@ def ev(component, label, value, source, link=None, ref=None):
     return row
 
 
+def usd(x: float) -> str:
+    a = abs(x)
+    body = f"${a / 1e9:.2f}B" if a >= 1e9 else f"${a / 1e6:.0f}M" if a >= 1e6 else f"${a:,.0f}"
+    return ("-" if x < 0 else "+") + body
+
+
 # ---- components ---------------------------------------------------------------------------------------------
 
 def etf_flows(snap, as_of: str):
@@ -68,7 +74,7 @@ def etf_flows(snap, as_of: str):
     for s, r in others.items():
         evid.append(ev("etf_flows", f"Context: {s} ETF net inflow {r['date']}", round(fnum(r["total_net_inflow"])),
                        f"GET /etfs/summary-history?symbol={s}&country_code=US", ref=r["date"]))
-    return score, evid, None
+    return score, evid, f"5-day net {usd(f5)} vs a typical day of {usd(typical)[1:]}; streak {streak:+d} days"
 
 
 def trend(snap, as_of: str):
@@ -82,7 +88,7 @@ def trend(snap, as_of: str):
     src = f"GET /currencies/{snap.get('currency_id')}/klines?interval=1d"
     return score, [ev("trend", f"{snap['asset']} close {day(ks[-1]['timestamp'])}", c, src, ref=day(ks[-1]["timestamp"])),
                    ev("trend", "20-day average close", round(s20, 2), src),
-                   ev("trend", "50-day average close", round(s50, 2), src)], None
+                   ev("trend", "50-day average close", round(s50, 2), src)],         f"close {c / s20 - 1:+.1%} vs 20-day average, {c / s50 - 1:+.1%} vs 50-day"
 
 
 def breadth(snap, as_of: str, live: bool):
@@ -96,7 +102,7 @@ def breadth(snap, as_of: str, live: bool):
     evid = [ev("breadth", f"{t} 7-day return", round(fnum(s["roi_7d"]), 4), f"GET /indices/{t}/market-snapshot")
             for t, s in sorted(idx.items())]
     evid.append(ev("breadth", "Indices up over 7 days", f"{up}/{len(idx)}", "GET /indices"))
-    return score, evid, None
+    return score, evid, f"{up} of {len(idx)} SoSoValue sector indices up over 7 days"
 
 
 def news(snap, as_of_ms: int):
@@ -120,7 +126,7 @@ def news(snap, as_of_ms: int):
     score = clamp((pos - neg) / max(5, pos + neg))
     evid.append(ev("news", "Headlines read / positive / negative (24 h)", f"{len(seen)} / {pos} / {neg}",
                    "GET /news/hot + GET /news"))
-    return score, evid, None
+    return score, evid, f"{pos} positive and {neg} negative of {len(seen)} headlines in 24 h"
 
 
 def sentiment(snap, as_of_ms: int):
@@ -135,7 +141,8 @@ def sentiment(snap, as_of_ms: int):
         return None, [], "no Fear & Greed reading"
     t, v = max(rows)
     score = clamp((50 - v) / 50) * (1 if v <= 25 or v >= 75 else 0.4)
-    return score, [ev("sentiment", f"Crypto Fear & Greed {day(t)}", v, "GET /analyses/fgi_indicator", ref=day(t))], None
+    tone = "extreme fear: adds a little" if v <= 25 else "extreme greed: trims" if v >= 75 else "no extreme: light weight"
+    return score, [ev("sentiment", f"Crypto Fear & Greed {day(t)}", v, "GET /analyses/fgi_indicator", ref=day(t))],         f"index {v}, {tone}"
 
 
 # ---- gates and the combined call --------------------------------------------------------------------------
