@@ -64,7 +64,39 @@ def chart(entries):
             '<span style="color:#5b6475">┅ buy &amp; hold</span></p>')
 
 
-def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: dict, snap: dict) -> None:
+def sodex_card(exe: dict | None) -> str:
+    if not exe:
+        return ""
+    head = ("<h2>Execution: what this would cost on SoDEX right now</h2><div class=card>"
+            "<p class=sub>The paper book fills at the daily close. This prices the same rebalance against the live "
+            "<a href=\"https://sodex.com\">SoDEX</a> spot order book (an on-chain order book on ValueChain), using "
+            "SoDEX's public market data, and shows the exact order the desk would sign. Nothing is sent.</p>")
+    if exe.get("status") == "error":
+        return head + f'<p class=bad>SoDEX market data unavailable this run: <code>{h(exe["error"])}</code></p></div>'
+    if exe.get("status") == "no-book":
+        return head + "<p class=sub>SoDEX returned an empty book this run.</p></div>"
+    at = (f'{h(exe["symbol"])} book at ValueChain block <code>{h(str(exe.get("block_height")))}</code>: '
+          f'mid ${exe["mid"]:,.2f}, spread {exe["spread_bps"]:.1f} bp')
+    if exe["status"] == "no-trade":
+        depth = exe.get("depth_25bp_usd")
+        return head + (f"<p>{at}.</p><p>{h(exe['note'])}: no order. "
+                       + (f"Depth within ±25 bp of mid: ${depth:,.0f}." if depth is not None else "") + "</p></div>")
+    cls = "ok" if exe["status"] == "ok" else "bad"
+    o = exe["order"]["orders"][0]
+    return head + (
+        f"<p>{at}.</p><table>"
+        f"<tr><td>Order</td><td><b class={cls}>{h(exe['side'])} {h(exe['quantity'])} BTC</b> "
+        f"(${exe['notional_usd']:,.0f}), LIMIT IOC at {h(o['price'])}</td></tr>"
+        f"<tr><td>Fill</td><td>VWAP ${exe['vwap']:,.2f} across {exe['levels']} level(s), slippage "
+        f"{exe['slippage_bps']:.2f} bp vs mid, taker fee ${exe['taker_fee_usd']:,.2f}</td></tr>"
+        f"<tr><td>Verdict</td><td class={cls}>{'within limits: would send' if exe['status'] == 'ok' else h(exe.get('note', 'blocked'))}"
+        f"</td></tr></table><details><summary>Order body for <code>POST /api/v1/spot/trade/orders</code> "
+        "(EIP-712 signed, domain <code>spot</code>)</summary><pre><code>"
+        f"{h(json.dumps(exe['order'], indent=1))}</code></pre></details></div>")
+
+
+def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: dict, snap: dict,
+           exe: dict | None = None) -> None:
     site = Path(site)
     site.mkdir(parents=True, exist_ok=True)
     entries = book["entries"]
@@ -119,6 +151,7 @@ def render(site: Path, data_dir: Path, sig: dict, rid: str, book: dict, card: di
     out.append(f'</table><p class=sub>Receipt <code>{h(rid)}</code> = SHA-256 of this call and its evidence '
                f'(<a href="data/receipts/{h(sig["as_of"])}.json">raw receipt with every API request made</a>).</p></div>')
 
+    out.append(sodex_card(exe))
     out.append(f"<h2>Track record</h2><div class=card>{chart(entries)}<table><tr><th>Date</th><th>Call</th>"
                "<th class=num>Position</th><th class=num>Next day</th><th class=num>Next 7 days</th><th>Right?</th>"
                "<th>Receipt</th></tr>")
