@@ -80,6 +80,15 @@ def run(args) -> dict:
             "weight": entry["weight"], "receipt": rid[:16], "errors": len(snap.get("errors") or [])}
 
 
+def rerender(data: Path, site: Path) -> None:
+    """Rebuild the page from data/ alone (after anchoring, or to publish a checkout)."""
+    data = Path(data)
+    latest = json.loads((data / "latest.json").read_text(encoding="utf-8"))
+    book = json.loads((data / "book.json").read_text(encoding="utf-8"))
+    snap = json.loads((data / "snapshot.json").read_text(encoding="utf-8"))
+    render(site, data, latest["signal"], latest["receipt"], book, latest["scorecard"], snap)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="desk")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -89,8 +98,36 @@ def main(argv=None):
     r.add_argument("--data", default="data")
     r.add_argument("--site", default="site")
     r.add_argument("--now-ms", type=int, default=None)
+    g = sub.add_parser("render", help="rebuild the site from data/ only")
+    g.add_argument("--data", default="data")
+    g.add_argument("--site", default="site")
+    n = sub.add_parser("anchor", help="put a day's receipt hash on chain (default: the latest call)")
+    n.add_argument("--data", default="data")
+    n.add_argument("--site", default="site")
+    n.add_argument("--date")
+    n.add_argument("--key-file", required=True, help="file holding the anchoring account's private key")
+    n.add_argument("--cast", default="cast", help="path to Foundry's cast")
+    n.add_argument("--chain", default="sepolia")
+    n.add_argument("--rpc")
+    v = sub.add_parser("verify", help="recompute receipts and check their on-chain anchors (default: all)")
+    v.add_argument("--data", default="data")
+    v.add_argument("--date")
+    v.add_argument("--rpc")
     a = ap.parse_args(argv)
-    print(json.dumps(run(a)))
+    if a.cmd == "run":
+        print(json.dumps(run(a)))
+    elif a.cmd == "render":
+        rerender(Path(a.data), Path(a.site))
+    elif a.cmd == "anchor":
+        from .anchor import anchor
+        date = a.date or json.loads((Path(a.data) / "latest.json").read_text(encoding="utf-8"))["signal"]["as_of"]
+        print(json.dumps(anchor(Path(a.data), date, Path(a.key_file), cast=a.cast, chain=a.chain, rpc=a.rpc)))
+        rerender(Path(a.data), Path(a.site))
+    elif a.cmd == "verify":
+        from .anchor import verify
+        dates = [a.date] if a.date else sorted(p.stem for p in (Path(a.data) / "receipts").glob("*.json"))
+        for d in dates:
+            print(json.dumps(verify(Path(a.data), d, rpc=a.rpc)))
 
 
 if __name__ == "__main__":
