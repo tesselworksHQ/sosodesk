@@ -103,5 +103,48 @@ class EndToEnd(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+class Anchor(unittest.TestCase):
+    def setUp(self):
+        from desk import anchor as an
+        self.an = an
+        self.tmp = Path(tempfile.mkdtemp())
+        sig = {"as_of": "2026-11-12", "asset": "BTC", "stance": "neutral", "composite": 0.0}
+        self.rid = bk.receipt_id(sig)
+        (self.tmp / "receipts").mkdir()
+        (self.tmp / "receipts" / "2026-11-12.json").write_text(json.dumps({"receipt": self.rid, "signal": sig}))
+        (self.tmp / "anchors.json").write_text(json.dumps({"2026-11-12": {"chain": "sepolia", "tx": "0xabc",
+                                                                         "receipt": self.rid}}))
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def fake_chain(self, calldata):
+        def call(url, method, params):
+            if method == "eth_getTransactionByHash":
+                return {"input": calldata, "blockNumber": "0x10"}
+            return {"timestamp": hex(1794492000)}
+        return call
+
+    def test_calldata_format(self):
+        self.assertEqual(self.an.calldata(self.rid), "0x736f736f6465736b" + self.rid)
+        with self.assertRaises(ValueError):
+            self.an.calldata("zz")
+
+    def test_verify_ok(self):
+        rep = self.an.verify(self.tmp, "2026-11-12", call=self.fake_chain(self.an.calldata(self.rid)))
+        self.assertTrue(rep["anchored"])
+        self.assertEqual(rep["anchored_at"], "2026-11-12 14:00:00 UTC")
+
+    def test_verify_catches_wrong_tx_and_edited_receipt(self):
+        with self.assertRaises(RuntimeError):
+            self.an.verify(self.tmp, "2026-11-12", call=self.fake_chain(self.an.calldata("0" * 64)))
+        p = self.tmp / "receipts" / "2026-11-12.json"
+        rec = json.loads(p.read_text())
+        rec["signal"]["stance"] = "risk-on"  # rewrite history
+        p.write_text(json.dumps(rec))
+        with self.assertRaises(RuntimeError):
+            self.an.verify(self.tmp, "2026-11-12", call=self.fake_chain(self.an.calldata(self.rid)))
+
+
 if __name__ == "__main__":
     unittest.main()
